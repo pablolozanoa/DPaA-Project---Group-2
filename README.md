@@ -9,7 +9,7 @@
 
 ## NASA Asteroid Data Analysis 
 
-## **Introduction**
+### **Introduction**
 
 This project aims to analyze NASA's asteroid dataset (`nasa.csv`) to identify potential patterns and provide insights through clustering and classification models. It is designed to preprocess, analyze, and model the dataset effectively, offering a streamlined workflow for similar datasets in astronomy or related fields.
 ---
@@ -61,12 +61,19 @@ The dataset, `nasa.csv`, includes features such as orbital details, sizes, and l
    - Used variance thresholding to remove low-variance features.
    - Selected the top 10 most important features using Random Forest.
 
-### **Model Training**
+### **Model Training and Parameters**
 
 The following models were trained:
-- **Random Forest**
-- **Logistic Regression**
-- **Support Vector Machine (SVM)**
+- **Random Forest**:
+  - `n_estimators`: 100
+  - `max_depth`: 20
+  - `random_state`: 42
+- **Logistic Regression**:
+  - `C`: 1
+  - `solver`: `liblinear`
+- **SVM**:
+  - `C`: 10
+  - `kernel`: `rbf`
 
 Hyperparameters were optimized using `GridSearchCV` and cross-validation.
 
@@ -90,7 +97,7 @@ Models were evaluated using Stratified K-Fold cross-validation. Metrics include:
 
 ## **Best Results**
 
-### **Overall Model Performance (All Features)**
+#### **Overall Model Performance (All Features)**
 
 | Model               | Accuracy  | Precision | Recall    | F1 Score  |
 |---------------------|-----------|-----------|-----------|-----------|
@@ -100,7 +107,7 @@ Random Forest achieved the highest overall performance using all features, with 
 
 ---
 
-### **Regularization Results (Logistic Regression)**
+#### **Regularization Results (Logistic Regression)**
 
 | Metric       | Best Parameters         | Accuracy | Precision | Recall    | F1 Score  |
 |--------------|-------------------------|----------|-----------|-----------|-----------|
@@ -110,7 +117,7 @@ L1 regularization marginally improved Logistic Regression's performance.
 
 ---
 
-### **Dimensionality Reduction Results**
+#### **Dimensionality Reduction Results**
 
 | Reduction Method | Model               | Accuracy  | Precision | Recall    | F1 Score  |
 |------------------|---------------------|-----------|-----------|-----------|-----------|
@@ -130,21 +137,6 @@ Dimensionality reduction techniques like PCA, t-SNE, and UMAP showed moderate su
 3. **Regularization**: L1 regularization slightly improved Logistic Regression's metrics.
 
 Random Forest stands out as the most effective model across all metrics, making it the top choice for this dataset.
-
----
-
-## **Model Parameters**
-
-- **Random Forest**:
-  - `n_estimators`: 100
-  - `max_depth`: 20
-  - `random_state`: 42
-- **Logistic Regression**:
-  - `C`: 1
-  - `solver`: `liblinear`
-- **SVM**:
-  - `C`: 10
-  - `kernel`: `rbf`
 
 ---
 
