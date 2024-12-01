@@ -9,9 +9,10 @@
 
 ## NASA Asteroid Data Analysis 
 
-### **Introduction**
+## **Introduction**
 
 This project aims to analyze NASA's asteroid dataset (`nasa.csv`) to identify potential patterns and provide insights through clustering and classification models. It is designed to preprocess, analyze, and model the dataset effectively, offering a streamlined workflow for similar datasets in astronomy or related fields.
+
 ---
 
 ## **Overview**
